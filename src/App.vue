@@ -1,20 +1,16 @@
 <script>
-import TheTwoColumnsLayout from './layouts/TheTwoColumnsLayout.vue'
+import HomePage from "./pages/HomePage.vue"
 
 export default {
   name: "App",
   components: {
-    TheTwoColumnsLayout
+    HomePage
   },
 }
 </script>
 
 <template>
-  <TheTwoColumnsLayout 
-    :leftColumnClass="'col-md-8 bg-vue'"
-    :rightColumnClass="'col-md-4'"
-    :fullsize="true"
-  />
+  <HomePage />
 </template>
 
 <style>
@@ -22,17 +18,17 @@ export default {
 @import "../node_modules/animate.css/animate.min.css";
 
 .bg-vue {
-  background-color: rgb(52, 73, 94);
-  color: rgb(255, 255, 255);
+  background-color: rgb(52, 73, 94)!important;
+  color: rgb(255, 255, 255)!important;
 }
 .bg-vue2 {
-  background-color: rgb(65, 184, 131);
-  color: rgb(255, 255, 255);
+  background-color: rgb(65, 184, 131)!important;
+  color: rgb(255, 255, 255)!important;
 }
 .text-vue {
-  color: rgb(52, 73, 94);
+  color: rgb(52, 73, 94)!important;
 }
 .text-vue2 {
-  color: rgb(65, 184, 131);
+  color: rgb(65, 184, 131)!important;
 }
 </style>
