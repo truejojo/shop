@@ -1,21 +1,20 @@
 <script>
-import HomePage from "./pages/HomePage.vue"
-
 export default {
   name: "App",
-  components: {
-    HomePage
+  created() {
+    this.$store.dispatch("autoSignin");
+    console.log(this.$store);
   },
 }
 </script>
 
 <template>
-  <HomePage />
+  <RouterView />
 </template>
 
 <style>
-@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
-@import "../node_modules/animate.css/animate.min.css";
+/* @import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+@import "../node_modules/animate.css/animate.min.css"; */
 
 .bg-vue {
   background-color: rgb(52, 73, 94)!important;
