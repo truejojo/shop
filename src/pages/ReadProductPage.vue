@@ -6,20 +6,28 @@ export default {
   components: {
     TheShopLayout,
   },
-  data() {
-    return {
-      id: null,
-    };
+  props: {
+    id: String,
   },
+  // Durch props: true im Router id vorhanden
+  // data() {
+  //   return {
+  //     id: null,
+  //   };
+  // },
   computed: {
     product() {
       return this.$store.getters.product(this.id);
     },
   },
-  created() {
-    console.log(this.$route);
-    this.id = this.$route.params.id
-  }
+  // Durch props: true im Router id vorhanden
+  // created() {
+  //   this.id = this.$route.params.id;
+  // },
+  // Durch props: true im Router id vorhanden
+  // beforeRouteUpdate(to) {
+  //   this.id = to.params.id;
+  // },
 };
 </script>
 
@@ -33,7 +41,7 @@ export default {
             Zurück
           </button>
         </h1>
-        <div class="card mt-4">
+        <div v-if="product" class="card mt-4">
           <div class="row no-gutters">
             <div class="col-md-4">
               <img
@@ -61,6 +69,25 @@ export default {
                 </div>
               </div>
             </div>
+            
+          </div>
+        </div>
+        <!-- <div v-else>
+              <div class="spinner-border text-vue2" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div> -->
+        <div class="card mt-4">
+          <div class="card-body">
+            <h4>Das könnte Sie auch interessieren</h4>
+            <RouterLink
+              :to="{
+                name: 'ReadProductPage',
+                params: { id: '-Nd9acghSLWyeLqliUAt' },
+              }"
+            >
+              Mehr erfahren...
+            </RouterLink>
           </div>
         </div>
       </div>

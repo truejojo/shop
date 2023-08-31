@@ -11,6 +11,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
+      alias: "/home",
       component: HomePage,
       beforeEnter: (to, from, next) => {
         if (store.getters.isAuthenticated) {
@@ -36,7 +37,9 @@ const router = createRouter({
     },
     {
       path: "/shop/read/product/:id",
+      name: "ReadProductPage",
       component: ReadProductPage,
+      props: true,
       meta: {
         requiresAuth: true,
       },

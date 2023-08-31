@@ -26,10 +26,15 @@ export default {
         </div>
       </div>
       <RouterLink
-        :to="`/shop/read/product/${product.id}`"
+        :to="{ name: 'ReadProductPage', params: {id: product.id} }"
         class="stretched-link"
       >
       </RouterLink>
+      <!-- <RouterLink
+        :to="`/shop/read/product/${product.id}`"
+        class="stretched-link"
+      >
+      </RouterLink> -->
     </div>
   </div>
 </template>
