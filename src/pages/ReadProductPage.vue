@@ -2,25 +2,24 @@
 import TheShopLayout from "../layouts/TheShopLayout.vue";
 
 export default {
-  name: "CreateProductPage",
+  name: "ReadProductPage",
   components: {
     TheShopLayout,
   },
   data() {
     return {
-      product: {
-        title: `Produkt ${Math.ceil(Math.random() * 10000)}`,
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam doloremque recusandae magni et, iure aperiam!",
-        price: Math.ceil(Math.random() * 100),
-      },
+      id: null,
     };
   },
-  methods: {
-    createProduct() {
-      this.$store.dispatch("storeProduct", this.product);
+  computed: {
+    product() {
+      return this.$store.getters.product(this.id);
     },
   },
+  created() {
+    console.log(this.$route);
+    this.id = this.$route.params.id
+  }
 };
 </script>
 
@@ -29,9 +28,9 @@ export default {
     <template #default>
       <div class="col-12">
         <h1 class="mt-4">
-          Neuer Artikel
-          <button @click="createProduct()" class="btn btn-lg bg-vue float-end">
-            Speichern
+          Produktdetails
+          <button @click="$router.go(-1)" class="btn btn-lg bg-vue float-end">
+            Zurück
           </button>
         </h1>
         <div class="card mt-4">
@@ -43,7 +42,7 @@ export default {
                 class="card-img"
               />
             </div>
-            <div class="col-md-8 card-body">
+            <div v-if="product" class="col-md-8 card-body">
               <div class="row">
                 <div class="col-9">
                   <h5 class="card-title mb-4">{{ product.title }}</h5>
