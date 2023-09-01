@@ -1,5 +1,6 @@
 <script>
 import TheTwoColumnsLayout from "../layouts/TheTwoColumnsLayout.vue";
+// import TheTwoColumnsLayout from "@layouts/TheTwoColumnsLayout.vue";
 import Register from "../components/auth/Register.vue";
 import Login from "../components/auth/Login.vue";
 

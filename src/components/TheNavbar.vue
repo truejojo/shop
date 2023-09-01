@@ -1,6 +1,19 @@
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "TheNavbar",
+  // computed: {
+  //   cartItemsTotal() {
+  //     return this.$store.getters.cartItemsTotal;
+  //   },
+  // },
+  // computed: mapGetters(["cartItemsTotal"]),
+  computed: {
+    // ...mapGetters({ cartSum: "cartItemsTotal" }),
+    ...mapGetters(["cartItemsTotal"]),
+    // weitere computed's nun möglich
+  },
   methods: {
     async signout() {
       try {
@@ -30,7 +43,7 @@ export default {
         </li>
       </ul>
       <button class="btn bg-vue mr-3">
-        <i class="fas fa-shopping-card"></i> Warenkorb (10€)
+        <i class="fas fa-shopping-card"></i> Warenkorb ( {{ cartItemsTotal }}€ )
       </button>
       <button class="btn bg-vue2" @click="signout">
         <i class="fas fa-sign-out-alt"></i> Logout

@@ -1,4 +1,5 @@
 <script>
+import { mapActions } from "vuex";
 import TheShopLayout from "../layouts/TheShopLayout.vue";
 
 export default {
@@ -28,6 +29,14 @@ export default {
   // beforeRouteUpdate(to) {
   //   this.id = to.params.id;
   // },
+  methods: {
+    // addItemToCart() {
+    //   this.$store.dispatch("addItemToCart", {
+    //     productId: this.id,
+    //   });
+    // },
+    ...mapActions(["addItemToCart"]),
+  },
 };
 </script>
 
@@ -47,29 +56,26 @@ export default {
               <img
                 src="https://dummyimage.com/600x400/34495e/fff"
                 alt=""
-                class="card-img"
+                class="card-img h-100"
               />
             </div>
             <div v-if="product" class="col-md-8 card-body">
-              <div class="row">
-                <div class="col-9">
-                  <h5 class="card-title mb-4">{{ product.title }}</h5>
-                </div>
-                <div class="col-3">
-                  <div class="d-grid">
-                    <div class="btn bg-vue2">{{ product.price }}€</div>
-                  </div>
-                </div>
+              <div class="d-flex justify-content-between mb-3">
+                <h5 class="card-title mb-4">{{ product.title }}</h5>
+                <button
+                  @click="addItemToCart({ productId: id })"
+                  class="btn btn-lg bg-vue2"
+                >
+                  Zum Warenkorb hinzufügen
+                </button>
               </div>
-              <div class="row">
-                <div class="col-12">
-                  <p>
-                    {{ product.description }}
-                  </p>
-                </div>
+              <div>
+                <p>{{ product.description }}</p>
+                <p>
+                  <strong>{{ product.price }}€</strong>
+                </p>
               </div>
             </div>
-            
           </div>
         </div>
         <!-- <div v-else>
