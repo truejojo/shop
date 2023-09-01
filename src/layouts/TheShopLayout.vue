@@ -20,7 +20,7 @@ export default {
           <div class="col-12">
             <TheTransitionLayout>
               <template #default>
-                <slot><h1>Hauptbereich</h1></slot>
+                <RouterView />
               </template>
             </TheTransitionLayout>
           </div>
@@ -28,6 +28,7 @@ export default {
       </div>
     </main>
   </div>
+  
 </template>
 
 <style></style>

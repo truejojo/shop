@@ -32,8 +32,6 @@ export default {
 </script>
 
 <template>
-  <TheShopLayout>
-    <template #default>
       <div class="col-12">
         <h1 class="mt-4">
           Produktdetails
@@ -91,8 +89,6 @@ export default {
           </div>
         </div>
       </div>
-    </template>
-  </TheShopLayout>
 </template>
 
 <style></style>
