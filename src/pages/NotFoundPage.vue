@@ -1,5 +1,5 @@
 <script>
-import TheEmptyLayout from "../layouts/TheEmptyLayout.vue";
+import TheEmptyLayout from "@/layouts/TheEmptyLayout.vue";
 
 export default {
   name: "NotFoundPage",

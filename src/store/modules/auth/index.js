@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FIREBASE_API_KEY } from "../../../config/firebase";
+import { FIREBASE_API_KEY } from "@/config/firebase";
 
 let timer;
 

@@ -1,5 +1,5 @@
 <script>
-import TheShopLayout from "../layouts/TheShopLayout.vue";
+import TheShopLayout from "@/layouts/TheShopLayout.vue";
 
 export default {
   name: "CreateProductPage",

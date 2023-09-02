@@ -2,7 +2,7 @@ const notFoundRoutes = [
   {
     path: "/:pathMatch(.*)*",
     name: "NotFoundPage",
-    component: () => import("../../pages/NotFoundPage.vue"),
+    component: () => import("@/pages/NotFoundPage.vue"),
     // redirect: "/",
   },
 ];

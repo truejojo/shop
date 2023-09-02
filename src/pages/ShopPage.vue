@@ -1,6 +1,6 @@
 <script>
-import TheShopLayout from "../layouts/TheShopLayout.vue";
-import ProductListItem from "../components/shop/ProductListItem.vue";
+import TheShopLayout from "@/layouts/TheShopLayout.vue";
+import ProductListItem from "@/components/shop/ProductListItem.vue";
 
 export default {
   name: "ShopPage",

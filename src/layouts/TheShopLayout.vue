@@ -1,5 +1,5 @@
 <script>
-import TheNavbar from "../components/TheNavbar.vue";
+import TheNavbar from "@/components/TheNavbar.vue";
 import TheTransitionLayout from "./TheTransitionLayout.vue";
 
 export default {

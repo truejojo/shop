@@ -1,6 +1,6 @@
 <script>
 import { mapActions } from "vuex";
-import TheShopLayout from "../layouts/TheShopLayout.vue";
+import TheShopLayout from "@/layouts/TheShopLayout.vue";
 
 export default {
   name: "ReadProductPage",

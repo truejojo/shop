@@ -1,5 +1,5 @@
-import HomePage from "../../pages/HomePage.vue";
-import store from "../../store";
+import HomePage from "@/pages/HomePage.vue";
+import store from "@/store";
 
 const appRoutes = [
   {
